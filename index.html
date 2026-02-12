@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>رزومه نیما صدقی | توسعه‌دهنده وب</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <style>
+      :root {
+        --primary-color: #2c3e50;
+        --secondary-color: #3498db;
+        --text-color: #333;
+        --bg-color: #f4f7f6;
+        --white: #ffffff;
+        --sidebar-width: 300px;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Vazirmatn", sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        line-height: 1.6;
+      }
+
+      .container {
+        display: flex;
+        max-width: 1000px;
+        margin: 40px auto;
+        background: var(--white);
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        min-height: 100vh;
+      }
+
+      /* ستون کناری (اطلاعات شخصی و مهارت‌ها) */
+      .sidebar {
+        width: var(--sidebar-width);
+        background-color: var(--primary-color);
+        color: var(--white);
+        padding: 30px;
+        text-align: right;
+      }
+
+      .profile-img {
+        width: 150px;
+        height: 150px;
+        background-color: #ecf0f1;
+        border-radius: 50%;
+        margin: 0 auto 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 50px;
+        color: var(--primary-color);
+        border: 4px solid var(--secondary-color);
+      }
+
+      .sidebar h1 {
+        font-size: 24px;
+        text-align: center;
+        margin-bottom: 5px;
+      }
+
+      .sidebar .job-title {
+        text-align: center;
+        font-size: 14px;
+        font-weight: 300;
+        margin-bottom: 30px;
+        color: var(--secondary-color);
+      }
+
+      .contact-info {
+        margin-bottom: 30px;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+        font-size: 14px;
+      }
+
+      .contact-item i {
+        margin-left: 10px;
+        color: var(--secondary-color);
+        width: 20px;
+        text-align: center;
+      }
+
+      .contact-item a {
+        color: var(--white);
+        text-decoration: none;
+      }
+
+      .section-title-side {
+        font-size: 18px;
+        border-bottom: 2px solid var(--secondary-color);
+        padding-bottom: 5px;
+        margin-bottom: 15px;
+        margin-top: 30px;
+      }
+
+      .skills-list {
+        list-style: none;
+      }
+
+      .skill-item {
+        margin-bottom: 10px;
+      }
+
+      .skill-name {
+        display: flex;
+        justify-content: space-between;
+        font-size: 13px;
+        margin-bottom: 5px;
+      }
+
+      .progress-bar {
+        width: 100%;
+        height: 6px;
+        background-color: rgba(255, 255, 255, 0.2);
+        border-radius: 3px;
+      }
+
+      .progress {
+        height: 100%;
+        background-color: var(--secondary-color);
+        border-radius: 3px;
+      }
+
+      /* محتوای اصلی */
+      .main-content {
+        flex: 1;
+        padding: 40px;
+      }
+
+      .section {
+        margin-bottom: 40px;
+      }
+
+      .section-title {
+        font-size: 22px;
+        color: var(--primary-color);
+        border-bottom: 2px solid #eee;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+      }
+
+      .section-title i {
+        margin-left: 10px;
+        color: var(--secondary-color);
+      }
+
+      .timeline-item {
+        margin-bottom: 25px;
+        border-right: 2px solid var(--secondary-color);
+        padding-right: 20px;
+        position: relative;
+      }
+
+      .timeline-item::before {
+        content: "";
+        position: absolute;
+        right: -6px;
+        top: 5px;
+        width: 10px;
+        height: 10px;
+        background: var(--secondary-color);
+        border-radius: 50%;
+      }
+
+      .job-role {
+        font-weight: 700;
+        font-size: 18px;
+        color: var(--primary-color);
+      }
+
+      .company {
+        font-weight: 600;
+        color: #7f8c8d;
+        margin-bottom: 5px;
+        font-size: 15px;
+      }
+
+      .date {
+        font-size: 13px;
+        color: #95a5a6;
+        margin-bottom: 10px;
+        display: block;
+      }
+
+      .description ul {
+        list-style-type: disc;
+        padding-right: 20px;
+      }
+
+      .description li {
+        margin-bottom: 5px;
+        color: #555;
+      }
+
+      .course-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 15px;
+      }
+
+      .course-card {
+        background: #fff;
+        border: 1px solid #eee;
+        padding: 15px;
+        border-radius: 5px;
+        transition: 0.3s;
+      }
+
+      .course-card:hover {
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        transform: translateY(-2px);
+      }
+
+      .course-name {
+        font-weight: 700;
+        font-size: 14px;
+        margin-bottom: 5px;
+        color: var(--primary-color);
+      }
+
+      .course-info {
+        font-size: 12px;
+        color: #7f8c8d;
+      }
+
+      /* حالت موبایل و پرینت */
+      @media (max-width: 768px) {
+        .container {
+          flex-direction: column;
+          margin: 0;
+          box-shadow: none;
+        }
+        .sidebar {
+          width: 100%;
+          text-align: center;
+        }
+        .contact-item {
+          justify-content: center;
+        }
+        .main-content {
+          padding: 20px;
+        }
+        .timeline-item {
+          border-right: none;
+          padding-right: 0;
+        }
+        .timeline-item::before {
+          display: none;
+        }
+      }
+
+      @media print {
+        .container {
+          box-shadow: none;
+          margin: 0;
+          width: 100%;
+        }
+        body {
+          background: white;
+        }
+        .sidebar {
+          background: #2c3e50 !important;
+          -webkit-print-color-adjust: exact;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <aside class="sidebar">
+        <div class="profile-img">
+          <i class="fas fa-user"></i>
+        </div>
+        <h1>نیما صدقی</h1>
+        <div class="job-title">توسعه‌دهنده وب و مدرس برنامه‌نویسی</div>
+        <div class="contact-info">
+          <div class="contact-item">
+            <i class="fas fa-phone"></i>
+            <span>09137036398</span>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:mmnsns0@gmail.com">mmnsns0@gmail.com</a>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>ایران، اصفهان</span>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-calendar"></i>
+            <span>سن: 20 سال</span>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-file-alt"></i>
+            <span>معافیت: دائم</span>
+          </div>
+        </div>
+
+        <h3 class="section-title-side">مهارت‌های تخصصی</h3>
+        <ul class="skills-list">
+          <li class="skill-item">
+            <div class="skill-name">
+              <span>HTML & CSS</span> <span>پیشرفته</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress" style="width: 95%"></div>
+            </div>
+          </li>
+          <li class="skill-item">
+            <div class="skill-name">
+              <span>JavaScript</span> <span>پیشرفته</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress" style="width: 90%"></div>
+            </div>
+          </li>
+          <li class="skill-item">
+            <div class="skill-name">
+              <span>WordPress</span> <span>متوسط</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress" style="width: 60%"></div>
+            </div>
+          </li>
+          <li class="skill-item">
+            <div class="skill-name"><span>Python</span> <span>متوسط</span></div>
+            <div class="progress-bar">
+              <div class="progress" style="width: 60%"></div>
+            </div>
+          </li>
+          <li class="skill-item">
+            <div class="skill-name"><span>C++</span> <span>متوسط</span></div>
+            <div class="progress-bar">
+              <div class="progress" style="width: 50%"></div>
+            </div>
+          </li>
+        </ul>
+
+        <h3 class="section-title-side">نرم‌افزارها</h3>
+        <ul class="skills-list">
+          <li class="skill-item">
+            <div class="skill-name">
+              <span>VS Code</span> <span>پیشرفته</span>
+            </div>
+          </li>
+          <li class="skill-item">
+            <div class="skill-name"><span>Git</span> <span>مقدماتی</span></div>
+          </li>
+          <li class="skill-item">
+            <div class="skill-name">
+              <span>Office (Word/Excel)</span> <span>پیشرفته</span>
+            </div>
+          </li>
+        </ul>
+
+        <h3 class="section-title-side">زبان‌ها</h3>
+        <ul class="skills-list">
+          <li class="skill-item">
+            <div class="skill-name">
+              <span>فارسی</span> <span>زبان مادری</span>
+            </div>
+          </li>
+          <li class="skill-item">
+            <div class="skill-name">
+              <span>انگلیسی</span> <span>بالاتر از متوسط</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress" style="width: 70%"></div>
+            </div>
+          </li>
+        </ul>
+      </aside>
+
+      <main class="main-content">
+        <section class="section">
+          <h2 class="section-title">
+            <i class="fas fa-user-circle"></i> درباره من
+          </h2>
+          <p>
+            مدرس برنامه‌نویسی و توسعه‌دهنده وب با تجربه تدریس مبانی برنامه‌نویسی
+            و طراحی سایت. مسلط به Python، SQLite، Tkinter، HTML، CSS و
+            JavaScript و آشنا با وردپرس و ابزارهای مرتبط. علاقه‌مند به یادگیری
+            تکنولوژی‌های جدید و انتقال دانش به دیگران. آماده همکاری با موسسات
+            آموزشی یا تیم‌های توسعه برای ارائه آموزش‌های کاربردی یا پیاده‌سازی
+            پروژه‌های وب.
+          </p>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">
+            <i class="fas fa-briefcase"></i> سوابق شغلی
+          </h2>
+
+          <div class="timeline-item">
+            <div class="job-role">مدرس برنامه‌نویسی و توسعه‌دهنده وب</div>
+            <div class="company">موسسه آموزشی راد پارسینا</div>
+            <span class="date">مهر ۱۴۰۳ - تا کنون (۱ سال و ۴ ماه)</span>
+            <div class="description">
+              <ul>
+                <li>آموزش برنامه‌نویسی HTML، CSS و JavaScript</li>
+                <li>تدریس طراحی و توسعه وب به دانشجویان</li>
+                <li>طراحی و اجرای پروژه‌های عملی برای یادگیری مؤثر</li>
+                <li>ایجاد و بهبود محتوای آموزشی مناسب</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="job-role">مدرس برنامه‌نویسی و طراحی سایت</div>
+            <div class="company">آموزشگاه فنی حرفه‌ای کیان کده</div>
+            <span class="date">تیر ۱۴۰۴ - تا کنون (۷ ماه)</span>
+          </div>
+
+          <div class="timeline-item">
+            <div class="job-role">مدرس برنامه‌نویسی و توسعه‌دهنده وب</div>
+            <div class="company">موسسه آموزشی ره‌جویان</div>
+            <span class="date">آذر ۱۴۰۳ - تیر ۱۴۰۴ (۷ ماه)</span>
+            <div class="description">
+              <ul>
+                <li>آموزش کار با ابزارهای طراحی وب</li>
+                <li>تدریس مفاهیم پایه و پیشرفته وب</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">
+            <i class="fas fa-graduation-cap"></i> سوابق تحصیلی
+          </h2>
+          <div class="timeline-item">
+            <div class="job-role">کارشناسی مهندسی کامپیوتر</div>
+            <div class="company">دانشگاه آزاد اسلامی اصفهان (خوراسگان)</div>
+            <span class="date">۱۴۰۲ - در حال تحصیل</span>
+            <p>معدل: ۱۷</p>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">
+            <i class="fas fa-certificate"></i> دوره‌ها و گواهینامه‌ها
+          </h2>
+          <div class="course-grid">
+            <div class="course-card">
+              <div class="course-name">برنامه‌نویسی پایتون (پیشرفته)</div>
+              <div class="course-info">
+                مکتب‌خونه (جادی میرمیرانی) | ۵۷ ساعت
+              </div>
+            </div>
+            <div class="course-card">
+              <div class="course-name">طراحی سایت جامع</div>
+              <div class="course-info">ابزار وردپرس | ۳۰ ساعت</div>
+            </div>
+            <div class="course-card">
+              <div class="course-name">HTML & CSS (مقدماتی تا پیشرفته)</div>
+              <div class="course-info">۲۰ ساعت</div>
+            </div>
+            <div class="course-card">
+              <div class="course-name">FlexBox پروژه محور</div>
+              <div class="course-info">۶ ساعت</div>
+            </div>
+            <div class="course-card">
+              <div class="course-name">HTML, CSS, JavaScript</div>
+              <div class="course-info">مجتمع آموزشی مهرگان | ۵۰ ساعت</div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
